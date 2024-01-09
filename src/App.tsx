@@ -1,13 +1,19 @@
 import "./App.css";
 
 function App() {
-  return <></>;
+  return (
+    <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center border-2 border-gray-500 py-20 rounded bg-gray-100">
+        <button className="text-white bg-blue-700 rounded w-40 h-7">
+          Increment
+        </button>
+        <p className="text-xl">Value-{0}</p>
+        <button className="text-white bg-blue-700 rounded w-40 h-7">
+          Decrement
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default App;
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/1104Anikbarua/next-redux-typescript-1.git
-git push -u origin main
