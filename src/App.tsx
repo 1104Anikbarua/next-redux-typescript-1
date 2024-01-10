@@ -8,6 +8,16 @@ import {
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 
 function App() {
+  //
+  const fruits = ["melon", "watermelon", "custard apple", "pear"];
+
+  console.log(fruits);
+  console.log(fruits.push("Lychee"));
+  const immutableFruits = [...fruits];
+  console.log(immutableFruits.push("pear"));
+  console.log(fruits);
+  console.log(immutableFruits);
+
   const { count } = useAppSelector((state) => state?.counter);
   const dispatch = useAppDispatch();
   return (
