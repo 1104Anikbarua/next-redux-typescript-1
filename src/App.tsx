@@ -1,10 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { increment, decrement } from "./redux/features/counterSlice";
+import {
+  increment,
+  decrement,
+  incrementByFive,
+} from "./redux/features/counterSlice";
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
 
 function App() {
-  const { count } = useSelector((state) => state?.counter);
-  const dispatch = useDispatch();
+  const { count } = useAppSelector((state) => state?.counter);
+  const dispatch = useAppDispatch();
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex items-center justify-center border-2 border-gray-500 py-20 rounded bg-gray-100">
@@ -20,6 +25,13 @@ function App() {
           onClick={() => dispatch(decrement())}
         >
           Decrement
+        </button>
+
+        <button
+          className="text-white bg-blue-700 rounded w-40 h-7 ml-5"
+          onClick={() => dispatch(incrementByFive(5))}
+        >
+          Increment By Five
         </button>
       </div>
     </div>
